@@ -1017,6 +1017,7 @@ CMakeFiles/PS_Proyecto.dir/src/main.cpp.o: /home/drajev/Documentos/PS_Proyecto/s
   /home/drajev/Documentos/PS_Proyecto/include/Admin.h \
   /home/drajev/Documentos/PS_Proyecto/include/Usuario.h \
   /home/drajev/Documentos/PS_Proyecto/include/Biblioteca.h \
+  /home/drajev/Documentos/PS_Proyecto/include/Menu.h \
   /home/drajev/Documentos/PS_Proyecto/include/Libro.h \
   /home/drajev/Documentos/PS_Proyecto/include/Utils.h \
   /usr/include/c++/12/functional \
@@ -1048,6 +1049,8 @@ CMakeFiles/PS_Proyecto.dir/src/main.cpp.o: /home/drajev/Documentos/PS_Proyecto/s
   /usr/include/c++/12/bits/locale_facets_nonio.tcc \
   /usr/include/c++/12/bits/locale_conv.h
 
+
+/home/drajev/Documentos/PS_Proyecto/include/Menu.h:
 
 /home/drajev/Documentos/PS_Proyecto/src/main.cpp:
 

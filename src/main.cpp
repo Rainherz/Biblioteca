@@ -5,6 +5,7 @@
 #include "Admin.h"
 #include "Usuario.h"
 #include "Biblioteca.h"
+#include "Menu.h"
 #include "Libro.h"
 #include "Utils.h"
 #include <codecvt>
@@ -105,33 +106,6 @@ void guardarCuentas(const Biblioteca& biblioteca) {
     }
 }
 
-void mostrarMenuAdmin() {
-    cout << "Menu Admin:\n";
-    cout << "1. Agregar libro\n";
-    cout << "2. Editar libro\n";
-    cout << "3. Eliminar libro\n";
-    cout << "4. Ver estado de prestamos\n";
-    cout << "5. Listar usuarios\n";
-    cout << "6. Listar libros\n";
-    cout << "0. Salir\n";
-}
-
-void mostrarMenuUsuario() {
-    cout << "Menu Usuario:\n";
-    cout << "1. Pedir prestado un libro\n";
-    cout << "2. Devolver un libro\n";
-    cout << "3. Listar libros\n";
-    cout << "4. Filtrar libros por categoria\n";
-    cout << "0. Salir\n";
-}
-
-void mostrarMenuInicial() {
-    cout << "Bienvenido al sistema de biblioteca\n";
-    cout << "1. Iniciar sesión\n";
-    cout << "2. Crear nueva cuenta de usuario\n";
-    cout << "0. Salir\n";
-}
-
 void crearNuevaCuenta(Biblioteca& biblioteca) {
     string nombre, password;
     cout << "Ingrese el nombre de usuario: ";
@@ -158,10 +132,8 @@ int main() {
 
     int opcionInicial;
     do {
-        mostrarMenuInicial();
-        cout << "Seleccione una opción: ";
-        cin >> opcionInicial;
-        cin.ignore();
+        Menu::mostrarMenuPrincipal();
+        opcionInicial = Menu::obtenerOpcion();
         switch (opcionInicial) {
             case 1: { // Iniciar sesión
                 string nombre, password;
@@ -173,145 +145,9 @@ int main() {
                 Usuario* usuario = biblioteca.obtenerUsuario(nombre);
 
                 if (admin && admin->verificarPassword(hashPassword(password))) {
-                    int opcion;
-                    do {
-                        mostrarMenuAdmin();
-                        cout << "Seleccione una opcion: ";
-                        cin >> opcion;
-                        cin.ignore(); // Clear the newline character from the input buffer
-                        switch (opcion) {
-                            case 1: {
-                                string titulo, autor, fechaPublicacion, descripcion, categoria;
-                                vector<string> categorias;
-                                cout << "Titulo: ";
-                                getline(cin, titulo);
-                                cout << "Autor: ";
-                                getline(cin, autor);
-                                cout << "Fecha de publicacion: ";
-                                getline(cin, fechaPublicacion);
-                                cout << "Descripcion: ";
-                                getline(cin, descripcion);
-                                cout << "Categorias (separadas por ';'): ";
-                                getline(cin, categoria);
-                                
-                                istringstream categoriasStream(categoria);
-                                string cat;
-                                while (getline(categoriasStream, cat, ';')) {
-                                    categorias.push_back(cat);
-                                }
-                                admin->agregarLibro(biblioteca, Libro(titulo, autor, fechaPublicacion, descripcion, categorias));
-                                break;
-                            }               
-                            case 2: {
-                                admin->editarLibro(biblioteca);
-                                break;
-                            }
-                            case 3: {
-                                string titulo;
-                                cout << "Titulo del libro a eliminar: ";
-                                getline(cin, titulo);
-                                admin->eliminarLibro(biblioteca, titulo);
-                                break;
-                            }
-                            case 4:
-                                admin->verEstadoPrestamos(biblioteca);
-                                break;
-                            case 5:
-                                admin->listarUsuarios(biblioteca);
-                                break;
-                            case 6:
-                                admin->mostrarLibros(biblioteca);
-                                break;
-                            case 0:
-                                cout << "Saliendo...\n";
-                                break;
-                            default:
-                                cout << "Opcion no valida.\n";
-                                break;
-                        }
-                    } while (opcion != 0);
+                    Menu::manejarMenuAdmin(admin, biblioteca);
                 } else if (usuario && usuario->verificarPassword((password))) {
-                    int opcion;
-                    do {
-                        mostrarMenuUsuario();
-                        cout << "Seleccione una opcion: ";
-                        cin >> opcion;
-                        cin.ignore(); 
-                        switch (opcion) {
-                            case 1: {
-                                vector<string> titulosLibrosDisponibles = biblioteca.obtenerTitulosLibrosDisponibles();
-                                if (titulosLibrosDisponibles.empty()) {
-                                    cout << "No hay libros disponibles para préstamo en este momento.\n";
-                                } else {
-                                    cout << "Libros disponibles para préstamo:\n";
-                                    for (size_t i = 0; i < titulosLibrosDisponibles.size(); ++i) {
-                                        cout << i + 1 << ". " << titulosLibrosDisponibles[i] << "\n";
-                                    }
-                                    
-                                    cout << "\nIngrese el número del libro que desea pedir prestado (0 para cancelar): ";
-                                    int seleccion;
-                                    cin >> seleccion;
-                                    cin.ignore(); // Limpiar el buffer
-
-                                    if (seleccion > 0 && seleccion <= static_cast<int>(titulosLibrosDisponibles.size())) {
-                                        string titulo = titulosLibrosDisponibles[seleccion - 1];
-                                        string fechaPrestamo, fechaDevolucion;
-                                        
-                                        cout << "Fecha de prestamo (YYYY-MM-DD): ";
-                                        getline(cin, fechaPrestamo);
-                                        cout << "Fecha de devolucion (YYYY-MM-DD): ";
-                                        getline(cin, fechaDevolucion);
-                                        
-                                        usuario->solicitarPrestamo(biblioteca, titulo, fechaPrestamo, fechaDevolucion);
-                                    } else if (seleccion != 0) {
-                                        cout << "Selección inválida.\n";
-                                    }
-                                }
-                                break;
-                            }
-                            case 2: {
-                                vector<string> librosPrestados = usuario->obtenerLibrosPrestados();
-                                if (librosPrestados.empty()) {
-                                    cout << "No tienes libros prestados actualmente.\n";
-                                } else {
-                                    cout << "Tus libros prestados:\n";
-                                    for (size_t i = 0; i < librosPrestados.size(); ++i) {
-                                        cout << i + 1 << ". " << librosPrestados[i] << "\n";
-                                    }
-                                    cout << "\nIngrese el número del libro que desea devolver (0 para cancelar): ";
-                                    int seleccion;
-                                    cin >> seleccion;
-                                    cin.ignore(); // Limpiar el buffer
-
-                                    if (seleccion > 0 && seleccion <= static_cast<int>(librosPrestados.size())) {
-                                        string tituloLibro = librosPrestados[seleccion - 1];
-                                        size_t pos = tituloLibro.find(" (Prestado");
-                                        if (pos != string::npos) {
-                                            tituloLibro = tituloLibro.substr(0, pos);
-                                        }
-                                        usuario->devolverLibro(tituloLibro);
-                                    } else if (seleccion != 0) {
-                                        cout << "Selección inválida.\n";
-                                    }
-                                }
-                                break;
-                            }
-                            case 3: {
-                                usuario->listarLibros(biblioteca);
-                                break;
-                            }
-                            case 4: {
-                                usuario->filtrarLibrosPorCategoria(biblioteca);
-                                break;
-                            }
-                            case 0:
-                                cout << "Saliendo...\n";
-                                break;
-                            default:
-                                cout << "Opcion no valida.\n";
-                                break;
-                        }
-                    } while (opcion != 0);
+                    Menu::manejarMenuUsuario(usuario, biblioteca);
                 } else {
                     cout << "Credenciales incorrectas." << endl;
                 }
@@ -320,14 +156,14 @@ int main() {
             case 2: // Crear nueva cuenta
                 crearNuevaCuenta(biblioteca);
                 break;
-            case 0:
+            case 3:
                 cout << "Saliendo del programa...\n";
                 break;
             default:
-                cout << "Opción no válida.\n";
+                Menu::mostrarMensajeError();
                 break;
         }
-    } while (opcionInicial != 0);
+    } while (opcionInicial != 3);
 
     guardarLibros(biblioteca);
     guardarCuentas(biblioteca);
