@@ -1,5 +1,5 @@
-CMakeFiles/PS_Proyecto.dir/src/main.cpp.o: \
- /home/drajev/Documentos/PS_Proyecto/src/main.cpp \
+CMakeFiles/PS_Proyecto.dir/src/GestorDatos.cpp.o: \
+ /home/drajev/Documentos/PS_Proyecto/src/GestorDatos.cpp \
  /usr/include/stdc-predef.h /usr/include/c++/12/iostream \
  /usr/include/x86_64-linux-gnu/c++/12/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/12/bits/os_defines.h \
@@ -147,27 +147,25 @@ CMakeFiles/PS_Proyecto.dir/src/main.cpp.o: \
  /usr/include/c++/12/bits/locale_facets.tcc \
  /usr/include/c++/12/bits/basic_ios.tcc \
  /usr/include/c++/12/bits/ostream.tcc /usr/include/c++/12/istream \
- /usr/include/c++/12/bits/istream.tcc /usr/include/c++/12/locale \
- /usr/include/c++/12/bits/locale_facets_nonio.h /usr/include/c++/12/ctime \
- /usr/include/x86_64-linux-gnu/c++/12/bits/time_members.h \
- /usr/include/x86_64-linux-gnu/c++/12/bits/messages_members.h \
- /usr/include/libintl.h /usr/include/c++/12/bits/codecvt.h \
- /usr/include/c++/12/bits/locale_facets_nonio.tcc \
- /usr/include/c++/12/bits/locale_conv.h \
- /home/drajev/Documentos/PS_Proyecto/include/Admin.h \
- /home/drajev/Documentos/PS_Proyecto/include/Biblioteca.h \
- /usr/include/c++/12/vector /usr/include/c++/12/bits/stl_uninitialized.h \
+ /usr/include/c++/12/bits/istream.tcc /usr/include/c++/12/fstream \
+ /usr/include/c++/12/bits/codecvt.h \
+ /usr/include/x86_64-linux-gnu/c++/12/bits/basic_file.h \
+ /usr/include/x86_64-linux-gnu/c++/12/bits/c++io.h \
+ /usr/include/c++/12/bits/fstream.tcc /usr/include/c++/12/sstream \
+ /usr/include/c++/12/bits/sstream.tcc /usr/include/c++/12/vector \
+ /usr/include/c++/12/bits/stl_uninitialized.h \
  /usr/include/c++/12/bits/stl_vector.h \
  /usr/include/c++/12/bits/stl_bvector.h \
  /usr/include/c++/12/bits/vector.tcc \
+ /home/drajev/Documentos/PS_Proyecto/include/Admin.h \
+ /home/drajev/Documentos/PS_Proyecto/include/Biblioteca.h \
  /home/drajev/Documentos/PS_Proyecto/include/Libro.h \
  /home/drajev/Documentos/PS_Proyecto/include/Usuario.h \
  /home/drajev/Documentos/PS_Proyecto/include/Admin.h \
  /home/drajev/Documentos/PS_Proyecto/include/Usuario.h \
  /home/drajev/Documentos/PS_Proyecto/include/Biblioteca.h \
- /home/drajev/Documentos/PS_Proyecto/include/Menu.h \
- /usr/include/c++/12/sstream /usr/include/c++/12/bits/sstream.tcc \
  /home/drajev/Documentos/PS_Proyecto/include/GestorDatos.h \
+ /home/drajev/Documentos/PS_Proyecto/include/Libro.h \
  /home/drajev/Documentos/PS_Proyecto/include/Utils.h \
  /usr/include/c++/12/functional /usr/include/c++/12/tuple \
  /usr/include/c++/12/bits/uses_allocator.h \
@@ -184,4 +182,10 @@ CMakeFiles/PS_Proyecto.dir/src/main.cpp.o: \
  /usr/include/c++/12/bits/algorithmfwd.h \
  /usr/include/c++/12/bits/stl_heap.h \
  /usr/include/c++/12/bits/stl_tempbuf.h \
- /usr/include/c++/12/bits/uniform_int_dist.h
+ /usr/include/c++/12/bits/uniform_int_dist.h /usr/include/c++/12/codecvt \
+ /usr/include/c++/12/locale \
+ /usr/include/c++/12/bits/locale_facets_nonio.h /usr/include/c++/12/ctime \
+ /usr/include/x86_64-linux-gnu/c++/12/bits/time_members.h \
+ /usr/include/x86_64-linux-gnu/c++/12/bits/messages_members.h \
+ /usr/include/libintl.h /usr/include/c++/12/bits/locale_facets_nonio.tcc \
+ /usr/include/c++/12/bits/locale_conv.h

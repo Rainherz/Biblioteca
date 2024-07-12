@@ -2,12 +2,12 @@
 #define MENU_H
 
 #include <iostream>
-using namespace std;
 #include "Admin.h"
 #include "Biblioteca.h"
 #include "Usuario.h"
 #include "Libro.h"
 #include <sstream>
+using namespace std;
 
 class Menu
 {
@@ -128,22 +128,22 @@ public:
 private:
     static void agregarLibro(Admin *admin, Biblioteca &biblioteca)
     {
-        std::string titulo, autor, fechaPublicacion, descripcion, categoria;
-        std::vector<std::string> categorias;
-        std::cout << "Titulo: ";
-        std::getline(std::cin, titulo);
-        std::cout << "Autor: ";
-        std::getline(std::cin, autor);
-        std::cout << "Fecha de publicacion: ";
-        std::getline(std::cin, fechaPublicacion);
-        std::cout << "Descripcion: ";
-        std::getline(std::cin, descripcion);
-        std::cout << "Categorias (separadas por ';'): ";
-        std::getline(std::cin, categoria);
+        string titulo, autor, fechaPublicacion, descripcion, categoria;
+        vector<string> categorias;
+        cout << "Titulo: ";
+        getline(cin, titulo);
+        cout << "Autor: ";
+        getline(cin, autor);
+        cout << "Fecha de publicacion: ";
+        getline(cin, fechaPublicacion);
+        cout << "Descripcion: ";
+        getline(cin, descripcion);
+        cout << "Categorias (separadas por ';'): ";
+        getline(cin, categoria);
 
-        std::istringstream categoriasStream(categoria);
-        std::string cat;
-        while (std::getline(categoriasStream, cat, ';'))
+        istringstream categoriasStream(categoria);
+        string cat;
+        while (getline(categoriasStream, cat, ';'))
         {
             categorias.push_back(cat);
         }
@@ -152,75 +152,75 @@ private:
 
     static void eliminarLibro(Admin *admin, Biblioteca &biblioteca)
     {
-        std::string titulo;
-        std::cout << "Titulo del libro a eliminar: ";
-        std::getline(std::cin, titulo);
+        string titulo;
+        cout << "Titulo del libro a eliminar: ";
+        getline(cin, titulo);
         admin->eliminarLibro(biblioteca, titulo);
     }
 
     static void solicitarPrestamo(Usuario *usuario, Biblioteca &biblioteca)
     {
-        std::vector<std::string> titulosLibrosDisponibles = biblioteca.obtenerTitulosLibrosDisponibles();
+        vector<string> titulosLibrosDisponibles = biblioteca.obtenerTitulosLibrosDisponibles();
         if (titulosLibrosDisponibles.empty())
         {
-            std::cout << "No hay libros disponibles para préstamo en este momento.\n";
+            cout << "No hay libros disponibles para préstamo en este momento.\n";
         }
         else
         {
-            std::cout << "Libros disponibles para préstamo:\n";
+            cout << "Libros disponibles para préstamo:\n";
             for (size_t i = 0; i < titulosLibrosDisponibles.size(); ++i)
             {
-                std::cout << i + 1 << ". " << titulosLibrosDisponibles[i] << "\n";
+                cout << i + 1 << ". " << titulosLibrosDisponibles[i] << "\n";
             }
 
-            std::cout << "\nIngrese el número del libro que desea pedir prestado (0 para cancelar): ";
+            cout << "\nIngrese el número del libro que desea pedir prestado (0 para cancelar): ";
             int seleccion;
-            std::cin >> seleccion;
-            std::cin.ignore();
+            cin >> seleccion;
+            cin.ignore();
 
             if (seleccion > 0 && seleccion <= static_cast<int>(titulosLibrosDisponibles.size()))
             {
-                std::string titulo = titulosLibrosDisponibles[seleccion - 1];
-                std::string fechaPrestamo, fechaDevolucion;
+                string titulo = titulosLibrosDisponibles[seleccion - 1];
+                string fechaPrestamo, fechaDevolucion;
 
-                std::cout << "Fecha de prestamo (YYYY-MM-DD): ";
-                std::getline(std::cin, fechaPrestamo);
-                std::cout << "Fecha de devolucion (YYYY-MM-DD): ";
-                std::getline(std::cin, fechaDevolucion);
+                cout << "Fecha de prestamo (YYYY-MM-DD): ";
+                getline(cin, fechaPrestamo);
+                cout << "Fecha de devolucion (YYYY-MM-DD): ";
+                getline(cin, fechaDevolucion);
 
                 usuario->solicitarPrestamo(biblioteca, titulo, fechaPrestamo, fechaDevolucion);
             }
             else if (seleccion != 0)
             {
-                std::cout << "Selección inválida.\n";
+                cout << "Selección inválida.\n";
             }
         }
     }
 
     static void devolverLibro(Usuario *usuario)
     {
-        std::vector<std::string> librosPrestados = usuario->obtenerLibrosPrestados();
+        vector<string> librosPrestados = usuario->obtenerLibrosPrestados();
         if (librosPrestados.empty())
         {
-            std::cout << "No tienes libros prestados actualmente.\n";
+            cout << "No tienes libros prestados actualmente.\n";
         }
         else
         {
-            std::cout << "Tus libros prestados:\n";
+            cout << "Tus libros prestados:\n";
             for (size_t i = 0; i < librosPrestados.size(); ++i)
             {
-                std::cout << i + 1 << ". " << librosPrestados[i] << "\n";
+                cout << i + 1 << ". " << librosPrestados[i] << "\n";
             }
-            std::cout << "\nIngrese el número del libro que desea devolver (0 para cancelar): ";
+            cout << "\nIngrese el número del libro que desea devolver (0 para cancelar): ";
             int seleccion;
-            std::cin >> seleccion;
-            std::cin.ignore();
+            cin >> seleccion;
+            cin.ignore();
 
             if (seleccion > 0 && seleccion <= static_cast<int>(librosPrestados.size()))
             {
-                std::string tituloLibro = librosPrestados[seleccion - 1];
+                string tituloLibro = librosPrestados[seleccion - 1];
                 size_t pos = tituloLibro.find(" (Prestado");
-                if (pos != std::string::npos)
+                if (pos != string::npos)
                 {
                     tituloLibro = tituloLibro.substr(0, pos);
                 }
@@ -228,7 +228,7 @@ private:
             }
             else if (seleccion != 0)
             {
-                std::cout << "Selección inválida.\n";
+                cout << "Selección inválida.\n";
             }
         }
     }

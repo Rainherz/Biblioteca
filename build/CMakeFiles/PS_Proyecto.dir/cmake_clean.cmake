@@ -3,6 +3,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/PS_Proyecto.dir/src/Admin.cpp.o.d"
   "CMakeFiles/PS_Proyecto.dir/src/Biblioteca.cpp.o"
   "CMakeFiles/PS_Proyecto.dir/src/Biblioteca.cpp.o.d"
+  "CMakeFiles/PS_Proyecto.dir/src/GestorDatos.cpp.o"
+  "CMakeFiles/PS_Proyecto.dir/src/GestorDatos.cpp.o.d"
   "CMakeFiles/PS_Proyecto.dir/src/Libro.cpp.o"
   "CMakeFiles/PS_Proyecto.dir/src/Libro.cpp.o.d"
   "CMakeFiles/PS_Proyecto.dir/src/Usuario.cpp.o"

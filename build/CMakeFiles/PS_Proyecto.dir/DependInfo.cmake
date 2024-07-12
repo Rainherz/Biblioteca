@@ -10,6 +10,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/drajev/Documentos/PS_Proyecto/src/Admin.cpp" "CMakeFiles/PS_Proyecto.dir/src/Admin.cpp.o" "gcc" "CMakeFiles/PS_Proyecto.dir/src/Admin.cpp.o.d"
   "/home/drajev/Documentos/PS_Proyecto/src/Biblioteca.cpp" "CMakeFiles/PS_Proyecto.dir/src/Biblioteca.cpp.o" "gcc" "CMakeFiles/PS_Proyecto.dir/src/Biblioteca.cpp.o.d"
+  "/home/drajev/Documentos/PS_Proyecto/src/GestorDatos.cpp" "CMakeFiles/PS_Proyecto.dir/src/GestorDatos.cpp.o" "gcc" "CMakeFiles/PS_Proyecto.dir/src/GestorDatos.cpp.o.d"
   "/home/drajev/Documentos/PS_Proyecto/src/Libro.cpp" "CMakeFiles/PS_Proyecto.dir/src/Libro.cpp.o" "gcc" "CMakeFiles/PS_Proyecto.dir/src/Libro.cpp.o.d"
   "/home/drajev/Documentos/PS_Proyecto/src/Usuario.cpp" "CMakeFiles/PS_Proyecto.dir/src/Usuario.cpp.o" "gcc" "CMakeFiles/PS_Proyecto.dir/src/Usuario.cpp.o.d"
   "/home/drajev/Documentos/PS_Proyecto/src/main.cpp" "CMakeFiles/PS_Proyecto.dir/src/main.cpp.o" "gcc" "CMakeFiles/PS_Proyecto.dir/src/main.cpp.o.d"

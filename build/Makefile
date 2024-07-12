@@ -177,6 +177,30 @@ src/Biblioteca.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/PS_Proyecto.dir/build.make CMakeFiles/PS_Proyecto.dir/src/Biblioteca.cpp.s
 .PHONY : src/Biblioteca.cpp.s
 
+src/GestorDatos.o: src/GestorDatos.cpp.o
+.PHONY : src/GestorDatos.o
+
+# target to build an object file
+src/GestorDatos.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PS_Proyecto.dir/build.make CMakeFiles/PS_Proyecto.dir/src/GestorDatos.cpp.o
+.PHONY : src/GestorDatos.cpp.o
+
+src/GestorDatos.i: src/GestorDatos.cpp.i
+.PHONY : src/GestorDatos.i
+
+# target to preprocess a source file
+src/GestorDatos.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PS_Proyecto.dir/build.make CMakeFiles/PS_Proyecto.dir/src/GestorDatos.cpp.i
+.PHONY : src/GestorDatos.cpp.i
+
+src/GestorDatos.s: src/GestorDatos.cpp.s
+.PHONY : src/GestorDatos.s
+
+# target to generate assembly for a file
+src/GestorDatos.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PS_Proyecto.dir/build.make CMakeFiles/PS_Proyecto.dir/src/GestorDatos.cpp.s
+.PHONY : src/GestorDatos.cpp.s
+
 src/Libro.o: src/Libro.cpp.o
 .PHONY : src/Libro.o
 
@@ -264,6 +288,9 @@ help:
 	@echo "... src/Biblioteca.o"
 	@echo "... src/Biblioteca.i"
 	@echo "... src/Biblioteca.s"
+	@echo "... src/GestorDatos.o"
+	@echo "... src/GestorDatos.i"
+	@echo "... src/GestorDatos.s"
 	@echo "... src/Libro.o"
 	@echo "... src/Libro.i"
 	@echo "... src/Libro.s"

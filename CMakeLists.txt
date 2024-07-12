@@ -13,6 +13,7 @@ set(SOURCES
     src/Libro.cpp
     src/main.cpp
     src/Usuario.cpp
+    src/GestorDatos.cpp
 )
 
 # Añade el ejecutable y los archivos fuente
