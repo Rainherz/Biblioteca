@@ -1,0 +1,9 @@
+Cien años de soledad,Gabriel García Márquez,1967-06-05,Una novela icónica de la literatura latinoamericana,Realismo mágico
+1984,George Orwell,1949-06-08,Una novela distópica sobre un régimen totalitario,Ciencia ficción
+Orgullo y prejuicio,Jane Austen,1813-01-28,Una clásica novela romántica,Romance
+El señor de los anillos,J.R.R. Tolkien,1954-07-29,Una épica de fantasía sobre la lucha entre el bien y el mal,Fantasía
+Moby-Dick,Herman Melville,1851-10-18,Una novela épica sobre la obsesión y la venganza,Aventura
+Pride and Prejudice,Jane Austen,1813-01-28,Una clásica novela romántica,Romance
+To Kill a Mockingbird,Harper Lee,1960-07-11,Una poderosa historia sobre la injusticia racial y la inocencia,Novela
+The Great Gatsby,F. Scott Fitzgerald,1925-04-10,Una novela que explora la decadencia de la sociedad americana,Novela
+Don Quijote de la Mancha,Miguel de Cervantes,1605-01-16,Una obra maestra de la literatura española,Aventura
