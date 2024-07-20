@@ -1,3 +1,0 @@
-/home/drajev/Documentos/PS_Proyecto/build/CMakeFiles/PS_Proyecto.dir
-/home/drajev/Documentos/PS_Proyecto/build/CMakeFiles/edit_cache.dir
-/home/drajev/Documentos/PS_Proyecto/build/CMakeFiles/rebuild_cache.dir
