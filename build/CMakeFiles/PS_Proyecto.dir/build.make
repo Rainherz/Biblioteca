@@ -172,10 +172,6 @@ PS_Proyecto: CMakeFiles/PS_Proyecto.dir/src/main.cpp.o
 PS_Proyecto: CMakeFiles/PS_Proyecto.dir/src/Usuario.cpp.o
 PS_Proyecto: CMakeFiles/PS_Proyecto.dir/src/GestorDatos.cpp.o
 PS_Proyecto: CMakeFiles/PS_Proyecto.dir/build.make
-PS_Proyecto: /home/drajev/Documentos/vcpkg/installed/x64-linux/debug/lib/libcurl-d.a
-PS_Proyecto: /home/drajev/Documentos/vcpkg/installed/x64-linux/debug/lib/libssl.a
-PS_Proyecto: /home/drajev/Documentos/vcpkg/installed/x64-linux/debug/lib/libcrypto.a
-PS_Proyecto: /home/drajev/Documentos/vcpkg/installed/x64-linux/debug/lib/libz.a
 PS_Proyecto: CMakeFiles/PS_Proyecto.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/drajev/Documentos/PS_Proyecto/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable PS_Proyecto"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/PS_Proyecto.dir/link.txt --verbose=$(VERBOSE)

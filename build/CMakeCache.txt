@@ -463,12 +463,8 @@ CMAKE_TOOLCHAIN_FILE-ADVANCED:INTERNAL=1
 CMAKE_UNAME:INTERNAL=/usr/bin/uname
 //ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: CURL_LIBRARY_DEBUG
-CURL_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
 //vcpkg
 CURL_LIBRARY_DEBUG:INTERNAL=/home/drajev/Documentos/vcpkg/installed/x64-linux/debug/lib/libcurl-d.a
-//ADVANCED property for variable: CURL_LIBRARY_RELEASE
-CURL_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
 //vcpkg
 CURL_LIBRARY_RELEASE:INTERNAL=/home/drajev/Documentos/vcpkg/installed/x64-linux/lib/libcurl.a
 //Details about finding OpenSSL

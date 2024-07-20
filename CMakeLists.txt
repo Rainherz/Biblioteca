@@ -18,10 +18,3 @@ set(SOURCES
 
 # Añade el ejecutable y los archivos fuente
 add_executable(PS_Proyecto ${SOURCES})
-
-# Encuentra e incluye las bibliotecas necesarias
-find_package(CURL REQUIRED)
-find_package(nlohmann_json REQUIRED)
-
-# Enlaza las bibliotecas
-target_link_libraries(PS_Proyecto CURL::libcurl nlohmann_json::nlohmann_json)
