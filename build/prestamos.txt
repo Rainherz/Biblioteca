@@ -3,4 +3,5 @@ usuario1,Orgullo y prejuicio,2024-07-10,2024-07-24,T
 usuario1,1984,2024-07-10,2024-07-28,F
 usuario1,El señor de los anillos,2024-07-10,2024-07-28,F
 diego,Moby-Dick,2024-07-15,2024-07-30,T
-diego,Don Quijote de la Mancha,2024-07-11,2024-07-31,F
+diego,Don Quijote de la Mancha,2024-07-11,2024-07-31,T
+diego,Base de Datos Elemental,2024-07-19,2024-07-31,F
