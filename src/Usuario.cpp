@@ -46,7 +46,7 @@ void Usuario::solicitarPrestamo(Biblioteca& biblioteca, const string& tituloLibr
 }
 
 void Usuario::guardarPrestamos(const vector<string>& prestamos) {
-    ofstream file("prestamos.txt");
+    ofstream file("../archivos/prestamos.txt");
     for (const auto& prestamo : prestamos) {
         file << prestamo << "\n";
     }
@@ -54,7 +54,7 @@ void Usuario::guardarPrestamos(const vector<string>& prestamos) {
 
 vector<string> Usuario::cargarPrestamos() {
     vector<string> prestamos;
-    ifstream file("prestamos.txt");
+    ifstream file("../archivos/prestamos.txt");
     string line;
     while (getline(file, line)) {
         prestamos.push_back(line);

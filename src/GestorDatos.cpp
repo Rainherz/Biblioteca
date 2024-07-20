@@ -14,7 +14,7 @@
 using namespace std;
 
 void GestorDatos::cargarLibros(Biblioteca& biblioteca) {
-    wifstream file("libros.txt");
+    wifstream file("../archivos/libros.txt");
     file.imbue(locale(locale(), new codecvt_utf8<wchar_t>));
     
     if (!file.is_open()) {
@@ -75,7 +75,7 @@ void GestorDatos::guardarLibros(const Biblioteca& biblioteca) {
 }
 
 void GestorDatos::cargarCuentas(Biblioteca& biblioteca) {
-    ifstream file("cuentas.txt");
+    ifstream file("../archivos/cuentas.txt");
     if (!file.is_open()) {
         cerr << "Error: No se pudo abrir el archivo cuentas.txt" << endl;
         return;
@@ -95,7 +95,7 @@ void GestorDatos::cargarCuentas(Biblioteca& biblioteca) {
 }
 
 void GestorDatos::guardarCuentas(const Biblioteca& biblioteca) {
-    ofstream file("cuentas.txt");
+    ofstream file("../archivos/cuentas.txt");
     for (const auto& admin : biblioteca.getAdmins()) {
         file << admin.getNombre() << ","
              << admin.getPasswordHash() << ",admin\n";
