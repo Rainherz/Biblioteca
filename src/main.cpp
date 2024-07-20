@@ -34,7 +34,7 @@ int main() {
                     
                     if (admin && admin->verificarPassword(hashPassword(password))) {
                         Menu::manejarMenuAdmin(admin, biblioteca);
-                    } else if (usuario && usuario->verificarPassword(hashPassword(password))) {
+                    } else if (usuario && usuario->verificarPassword((password))) {
                         Menu::manejarMenuUsuario(usuario, biblioteca);
                     } else {
                         cout << "Credenciales incorrectas." << endl;
