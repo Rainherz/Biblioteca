@@ -167,6 +167,7 @@ CMakeFiles/PS_Proyecto.dir/src/main.cpp.o: \
  /home/drajev/Documentos/PS_Proyecto/include/Biblioteca.h \
  /home/drajev/Documentos/PS_Proyecto/include/Menu.h \
  /usr/include/c++/12/sstream /usr/include/c++/12/bits/sstream.tcc \
+ /usr/include/c++/12/limits \
  /home/drajev/Documentos/PS_Proyecto/include/GestorDatos.h \
  /home/drajev/Documentos/PS_Proyecto/include/Utils.h \
  /usr/include/c++/12/functional /usr/include/c++/12/tuple \

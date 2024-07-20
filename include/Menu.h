@@ -7,6 +7,7 @@
 #include "Usuario.h"
 #include "Libro.h"
 #include <sstream>
+#include <limits>
 using namespace std;
 
 class Menu
@@ -43,14 +44,20 @@ public:
         cout << "0. Salir\n";
     }
 
-    static int obtenerOpcion()
-    {
-        int opcion;
+    static int obtenerOpcion() {
+    int opcion;
+    while (true) {
         cout << "Seleccione una opción: ";
-        cin >> opcion;
-        cin.ignore();
-        return opcion;
+        if (cin >> opcion) {
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            return opcion;
+        } else {
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            cout << "Error: Entrada inválida. Por favor, ingrese un número." << endl;
+        }
     }
+}
 
     static void mostrarMensajeError()
     {
