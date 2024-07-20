@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.10)
-project(PS_Proyecto)
+project(Biblioteca)
 
 set(CMAKE_CXX_STANDARD 17)
 
@@ -17,4 +17,4 @@ set(SOURCES
 )
 
 # Añade el ejecutable y los archivos fuente
-add_executable(PS_Proyecto ${SOURCES})
+add_executable(Biblioteca ${SOURCES})
